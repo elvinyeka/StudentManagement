@@ -15,7 +15,7 @@ def start():
     """))
     if xususiEmr == 1:
         TelebeElaveEt()
-        print(f"{student_name_list} adli telebe elave olundu")
+        print(f"{student_name_list} adlı tələbə əlavə olundu")
         start()
     elif xususiEmr == 2:
         KodaGoreMelumatSil()
@@ -34,27 +34,27 @@ def start():
 
 
 def TelebeElaveEt():
-    telebe_sayi = int(input("Ne qeder telebe melumati daxil edeceksiniz?:"))
+    telebe_sayi = int(input("Daxil edəcəyiniz tələbə sayını yazın:"))
 
     m = 1
 
     while m <= telebe_sayi:
 
-        student_code = int(input("Telebe kodunu daxil edin:"))
+        student_code = int(input("Tələbə kodunu daxil edin:"))
 
-        student_name = input("Telebenin adi:")
+        student_name = input("Tələbənin adı:")
 
-        student_surname = input("Telebenin soyadi:")
+        student_surname = input("Tələbənin soyadı:")
 
-        student_email = input("Telebenin email adresi:")
+        student_email = input("Tələbənin email adresi:")
 
-        student_phone = input("Telebenin nomresi:")
+        student_phone = input("Tələbənin nomresi:")
         m += 1
 
         if 2 < len(str(student_code)) < 4:
             student_code_list.append(student_code)
         else:
-            student_code = int(input("Zehmet olmasa 3 reqemli telebe kodu daxil edin:"))
+            student_code = int(input("Zəhmet olmasa 3 rəqəmli tələbə kodu daxil edin:"))
             student_code_list.append(student_code)
 
         ## Data append to list ##
@@ -67,30 +67,30 @@ def TelebeElaveEt():
 
 
 def TelebeAdinaGoreAxtar():
-    search_student_name = input("Melumatlari axtarilan telebe adini daxil edin:")
+    search_student_name = input("Məlumatlarə axtarılan tələbə adını daxil edin:")
 
     for s in student_name_list:
         if s == search_student_name:
             name_index = student_name_list.index(s)
-            print("{}-adli telebenin, telebe kodu {}, soyadi {}, email unvani {}, telefon nomresi {}".format(
+            print("{}-adlə tələbənin, tələbə kodu {}, soyadı {}, email unvanı {}, telefon nomresi {}".format(
                 search_student_name, student_code_list[name_index],
                 student_surname_list[name_index], student_email_list[name_index],
                 student_phone_list[name_index]))
 
 
 def KodaGoreMelumatDeyisdir():
-    input_student_code = int(input("Telebe kodunu daxil edin:"))
-    print("""Telebenin hansi melumatini deyisdirmek isteyirsinizse onu asagidaki kimi daxil edin:
-kodunu deyisdirmek isteyirsinizse =>kod,adini deyisdirmek isteyirsinizse => ad, soyadini deyisdirmek isteyirsinizse => soyad, emailini deyisdirmek isteyirsinizse =>email,
-telefon nomresini deyisdirmek isteyirsinizse => telefon --kimi qeyd edin!""")
-    sayi = int(input("Ne qeder melumati deyisdirmek isteyirsinizse sayini qeyd edin:"))
+    input_student_code = int(input("Tələbə kodunu daxil edin:"))
+    print("""Tələbənin hansı məlumatını dəyişdirmək istəyirsinizsə onu aşağıdakı kimi daxil edin:
+kodunu dəyişdirmək istəyirsinizsə =>kod,adını dəyişdirmək istəyirsinizsə => ad, soyadını dəyişdirmək istəyirsinizsə => soyad, emailini dəyişdirmək istəyirsinizsə =>email,
+telefon nömrəsini dəyişdirmək istəyirsinizsə => telefon --kimi qeyd edin!""")
+    sayi = int(input("Nə qədər melumati dəyişdirmək istəyirsinizsə sayını qeyd edin:"))
 
     m = 1
     while m <= sayi:
-        change = input("Deyisdirmek istediyiniz melumatin yuxarida gosterilen formada acar sozunu daxil edin:")
+        change = input("Dəyişdirmək istədiyiniz məlumatin yuxarida göstərilən formada açar sözünü daxil edin:")
         change = change.lower()
 
-        replace_data = input("ne ile deyisdirmek isteyirsiz?:")
+        replace_data = input("Dəyişdirmək istədiyiniz məlumatı daxil edin: ")
 
         m += 1
 
